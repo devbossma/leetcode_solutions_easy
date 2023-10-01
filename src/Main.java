@@ -12,13 +12,6 @@ public class Main {
             if (operations[i].equals("--X")) --x;
             if (operations[i].equals("X--")) x--;
         }
-        /*for (String op:operations
-             ) {
-            if (op.equals("++X")) ++x;
-            if (op.equals("X++")) x++;
-            if (op.equals("--X")) --x;
-            if (op.equals("X--")) x--;
-        }*/
         return x;
     }
     public static List<List<Integer>> generate(int numRows) {
