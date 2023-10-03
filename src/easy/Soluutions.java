@@ -13,13 +13,7 @@ public class Soluutions {
             if (operations[i].equals("--X")) --x;
             if (operations[i].equals("X--")) x--;
         }
-        /*for (String op:operations
-             ) {
-            if (op.equals("++X")) ++x;
-            if (op.equals("X++")) x++;
-            if (op.equals("--X")) --x;
-            if (op.equals("X--")) x--;
-        }*/
+        
         return x;
     }
     public static List<List<Integer>> generate(int numRows) {
@@ -60,11 +54,7 @@ public class Soluutions {
             int d = (int) x.charAt(x.length()-1);
             sorted.put(d,x);
         }
-//     or
-        /*splited.forEach(x->{
-            int d = (int) x.charAt(x.length()-1);
-            sorted.put(d,x);
-        });*/
+
 
 
         sorted.forEach((k,v)-> {
@@ -92,7 +82,7 @@ public class Soluutions {
         return result.toString().trim();
     }
     public static boolean  reNumbersAscending(String s) {
-//
+
         String regular_expression = "^(\\d+)";
         String[] splited = s.split(" ");
         int count = 0;
@@ -123,6 +113,8 @@ public class Soluutions {
         }
         return ans;
     }
+    //26. Remove Duplicates from Sorted Array
+
     public static int  removeDuplicates(int[] nums) {
         List<Integer> helper = new ArrayList<>();
         int k=0;
