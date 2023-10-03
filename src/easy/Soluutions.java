@@ -1,7 +1,7 @@
 package easy;
 
 import java.util.*;
-
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class Soluutions {
@@ -108,5 +108,48 @@ public class Soluutions {
             }
         }
         return count == 0;
+    }
+    public static int[] applyOperations(int[] nums) {
+        int[] ans = new int[nums.length];
+        int counter=0;
+        for (int i = 0; i < nums.length-1; i++) {
+            if (nums[i] == nums[i+1]){
+                nums[i] = nums[i]*2;
+                nums[i+1] = 0;
+            }
+        }
+        for (int i = 0; i < ans.length; i++) {
+            if(nums[i] != 0) ans[counter++] = nums[i];
+        }
+        return ans;
+    }
+    public static int  removeDuplicates(int[] nums) {
+        List<Integer> helper = new ArrayList<>();
+        int k=0;
+        if (nums.length > 1){
+            for (int i = 0; i < nums.length-1; i++) {
+                if ((nums[i] == nums[i+1]) && !helper.contains(nums[i])){
+                    helper.add(nums[i]);
+                    if(!helper.contains(nums[i+1])){
+                        helper.add(nums[i+1]);
+                    }
+                } else if (nums[i] != nums[i+1]) {
+                    if (!helper.contains(nums[i])){
+                        helper.add(nums[i]);
+                    }
+                    if(!helper.contains(nums[i+1])){
+                        helper.add(nums[i+1]);
+                    }
+                }
+            }
+            for (int i = 0; i < helper.size(); i++) {
+                nums[i] = helper.get(i);
+            }
+            k = helper.size();
+        }else if (nums.length == 1){
+            helper.add(nums[0]);
+            k = helper.size();
+        }else k = helper.size();
+        return k;
     }
 }
