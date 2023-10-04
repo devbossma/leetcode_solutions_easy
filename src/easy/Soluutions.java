@@ -113,8 +113,8 @@ public class Soluutions {
         }
         return ans;
     }
-    //26. Remove Duplicates from Sorted Array
 
+    //26. Remove Duplicates from Sorted Array
     public static int  removeDuplicates(int[] nums) {
         List<Integer> helper = new ArrayList<>();
         int k=0;
@@ -156,5 +156,22 @@ public class Soluutions {
             nums[i] = notValue.get(i);
         }
         return k;
+    }
+    public static int[][] flipAndInvertImage(int[][] image) {
+        int n = image.length;
+        int[][] flipped = new int[n][n];
+        int bit;
+        for (int i = 0; i <n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (image[i][(n-1)-j] == 0){
+                    bit = 1;
+                    flipped[i][j] = bit;
+                }else if (image[i][(n-1)-j] == 1){
+                    bit =0;
+                    flipped[i][j] = bit;
+                }
+            }
+        }
+        return flipped;
     }
 }
