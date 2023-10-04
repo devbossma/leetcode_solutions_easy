@@ -144,6 +144,7 @@ public class Soluutions {
         }else k = helper.size();
         return k;
     }
+    // 27. Remove Element
     public static int removeElement(int[] nums, int val) {
         List<Integer> notValue = new ArrayList<>();
         int k =0;
