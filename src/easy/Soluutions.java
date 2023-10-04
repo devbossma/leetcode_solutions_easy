@@ -152,4 +152,17 @@ public class Soluutions {
         }else k = helper.size();
         return k;
     }
+    public static int removeElement(int[] nums, int val) {
+        List<Integer> notValue = new ArrayList<>();
+        int k =0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != val){
+                notValue.add(nums[i]);
+                k = notValue.size();}
+        }
+        for (int i = 0; i < notValue.size(); i++) {
+            nums[i] = notValue.get(i);
+        }
+        return k;
+    }
 }
