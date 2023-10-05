@@ -3,6 +3,7 @@ package hard;
 import java.util.*;
 
 public class Solutions {
+    // 42. Trapping Rain Water
     public static int trap(int[] height) {
         int trapped = 0;
         int currentElevation = 0;
