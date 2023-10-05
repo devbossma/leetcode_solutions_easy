@@ -45,6 +45,7 @@ public class Soluutions {
 
         return ans;
     }
+    // 1859. Sorting the Sentence(version 1)
     public static String sortSentence(String s) {
         //          "is2 sentence4 This1 a3"
         StringBuilder resl = new StringBuilder();
@@ -67,6 +68,7 @@ public class Soluutions {
 
         return (resl.toString()).trim();
     }
+    //1859. Sorting the Sentence (version 2 )
     public static String sortedSentence(String s){
         String[] splited = s.split(" ");
         String[] sorted = new String[splited.length];
@@ -83,7 +85,8 @@ public class Soluutions {
         System.out.println(Arrays.asList(sorted));
         return result.toString().trim();
     }
-    public static boolean  reNumbersAscending(String s) {
+    //2042. Check if Numbers Are Ascending in a Sentence
+    public static boolean  areNumbersAscending(String s) {
 
         String regular_expression = "^(\\d+)";
         String[] splited = s.split(" ");
@@ -101,6 +104,7 @@ public class Soluutions {
         }
         return count == 0;
     }
+    //2460. Apply Operations to an Array
     public static int[] applyOperations(int[] nums) {
         int[] ans = new int[nums.length];
         int counter=0;
