@@ -160,6 +160,7 @@ public class Soluutions {
         }
         return k;
     }
+    // 832. Flipping an Image
     public static int[][] flipAndInvertImage(int[][] image) {
         int n = image.length;
         int[][] flipped = new int[n][n];
