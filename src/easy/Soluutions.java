@@ -1,5 +1,7 @@
 package easy;
 
+import hard.Solutions;
+
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -175,4 +177,43 @@ public class Soluutions {
         }
         return flipped;
     }
+
+
+    //***************  872. Leaf-Similar Trees *******************//
+    // treeNode class definition;
+    public static class TreeNode {
+      int val;
+      public  TreeNode left;
+      public  TreeNode right;
+      public TreeNode() {}
+      public TreeNode(int val) { this.val = val; }
+      public TreeNode(int val, TreeNode left, TreeNode right) {
+          this.val = val;
+          this.left = left;
+          this.right = right;
+      }
+    }
+    public static  List<List<Integer>> rTolist(List<List<Integer>> list, TreeNode n){
+        List<Integer> r = new ArrayList<>();
+        if(n.left == null  && n.right == null){
+            r.add(n.val);
+            list.add(r);
+        }
+        if(n.left != null){rTolist(list, n.left);}
+        if (n.right != null){ rTolist(list, n.right); }
+        return list;
+    }
+    public static  boolean leafSimilar(TreeNode root1, TreeNode root2) {
+        List<List<Integer>> leaf1 = new ArrayList<>();
+        List<List<Integer>> leaf2 = new ArrayList<>();
+        List<List<Integer>> r1 = rTolist(leaf1, root1);
+        List<List<Integer>> r2 = rTolist(leaf2, root2);
+        boolean similar = r1.size() == r1.size();
+        if(r1.size() != r2.size()) similar = false;
+        if(!r1.equals(r2)) similar = false;
+
+
+        return similar;
+    }
+    //**********************************//
 }
