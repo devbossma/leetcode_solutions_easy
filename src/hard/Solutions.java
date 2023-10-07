@@ -50,6 +50,7 @@ public class Solutions {
         }
         return trapped;
     }
+    // 84. Largest Rectangle in Histogram
     public static int largestRectangleArea(int[] heights) {
         int max=0;
         List<Integer> maxOfIndex = new ArrayList<>();
