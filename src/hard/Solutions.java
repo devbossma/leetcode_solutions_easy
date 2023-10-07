@@ -1,5 +1,7 @@
 package hard;
 
+import easy.Soluutions;
+
 import java.util.*;
 
 public class Solutions {
@@ -47,5 +49,27 @@ public class Solutions {
         }
         return trapped;
     }
+    public static int largestRectangleArea(int[] heights) {
+        int max=0;
+        List<Integer> maxOfIndex = new ArrayList<>();
+        for (int i = 1; i < heights.length; i++) {
+
+
+
+        }
+        System.out.println(maxOfIndex);
+
+
+
+
+
+        return max;
+    }
+
+
+
+
+
+
 }
 
