@@ -53,13 +53,7 @@ public class Solutions {
     // 84. Largest Rectangle in Histogram
     public static int largestRectangleArea(int[] heights) {
         int max=0;
-        List<Integer> maxOfIndex = new ArrayList<>();
-        for (int i = 1; i < heights.length; i++) {
-
-
-
-        }
-        System.out.println(maxOfIndex);
+        
 
 
 
