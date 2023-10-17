@@ -220,5 +220,21 @@ public class Soluutions {
 
         return similar;
     }
-    //**********************************//
+   // 136. Single Number
+    public static int singleNumber(int[] nums) {
+        List<Integer> single = new ArrayList<>();
+        List<Integer> doubled = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            if(i == 0)
+                single.add(nums[0]);
+            else{
+                if (single.contains(nums[i])){
+                    single.remove(single.indexOf(nums[i]));
+                    doubled.add(nums[i]);
+                }else single.add(nums[i]);
+            }
+        }
+        return single.get(0);
+
+    }
 }
