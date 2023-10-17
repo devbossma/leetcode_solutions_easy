@@ -53,15 +53,55 @@ public class Solutions {
     // 84. Largest Rectangle in Histogram
     public static int largestRectangleArea(int[] heights) {
         int max=0;
-        
+        Stack<Integer> index = new Stack<>();
+        Stack<Integer> rect = new Stack<>();
 
 
+        for (int i = 0; i < heights.length; i++) {
+            int tempMax;
+            if (i == 0 ) {
+                index.push(i);
+                rect.push(heights[i]);
+                tempMax = rect.peek();
+                if (tempMax > max) max = tempMax;
+            }else{
+                if (heights[i] < heights[i-1]){
+
+                    int lastIndex=0;
+
+                    while(!rect.isEmpty() && (heights[i] < rect.peek())){
+                        lastIndex = index.pop();
+                        int lastRect = rect.pop();
+                        tempMax = lastRect * (i - lastIndex);
+
+                        if (tempMax > max) max = tempMax;
+                        tempMax = 0;
+
+                    }
+                    rect.push(heights[i]);
+                    index.push(lastIndex);
+
+                }else if(heights[i] > heights[i-1]){
+                    rect.push(heights[i]);
+                    index.push(i);
+                }
+            }
+        }
+        System.out.println(rect.size());
+        System.out.println(index);
+        System.out.println(rect);
+        while(rect.size() > 0){
+            int tempMax = 0;
+            int rectVal = rect.pop();
+            tempMax = rectVal*(heights.length-index.pop());
+            if (tempMax > max) max = tempMax;
+        }
 
 
-
+        System.out.println(index);
+        System.out.println(rect);
         return max;
     }
-
 
 
 
