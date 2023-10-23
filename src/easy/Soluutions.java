@@ -237,4 +237,12 @@ public class Soluutions {
         return single.get(0);
 
     }
+    // 1920. Build Array from Permutation
+    public static int[] buildArray(int[] nums) {
+        int[] ans = new int[nums.length];
+        for(int i = 0; i <= nums.length-1; i++){
+            ans[i] = nums[nums[i]];
+        }
+        return ans;
+    }
 }
