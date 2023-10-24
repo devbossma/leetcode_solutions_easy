@@ -245,4 +245,35 @@ public class Soluutions {
         }
         return ans;
     }
+
+    public static int numIdenticalPairs(int[] nums) {
+        int count=0;
+        Map<Integer,Integer> helper = new HashMap<>();
+        Map<Integer,Integer> helper2 = new HashMap<>();
+        Stack<Integer> itemsInNums = new Stack<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            if (helper.containsKey(nums[i])){
+                int prev = helper.get(nums[i]);
+                int innerCount = helper2.get(nums[i]);
+                innerCount = (prev*prev) - innerCount;
+
+                helper.put(nums[i], helper.get(nums[i])+1);
+                helper2.put(nums[i], innerCount);
+
+            }
+            if (!helper.containsKey(nums[i])){
+
+                helper.put(nums[i], 1);
+                helper2.put(nums[i], 0);
+            }
+            if (!itemsInNums.contains(nums[i])) itemsInNums.push(nums[i]);
+        }
+
+        while (!itemsInNums.isEmpty()){
+            count = count + helper2.get(itemsInNums.pop());
+        }
+
+        return count;
+    }
 }
