@@ -245,7 +245,7 @@ public class Soluutions {
         }
         return ans;
     }
-
+    // 1512. Number of Good Pairs
     public static int numIdenticalPairs(int[] nums) {
         int count=0;
         Map<Integer,Integer> helper = new HashMap<>();
