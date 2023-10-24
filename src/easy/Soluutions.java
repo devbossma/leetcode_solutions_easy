@@ -276,4 +276,28 @@ public class Soluutions {
 
         return count;
     }
+
+    public static int[] shuffle(int[] nums, int n) {
+        int[] ans = new int[2*n];
+        Queue<Integer> indexes = new LinkedList<>();
+        Queue<Integer> indexesOfn = new LinkedList<>();
+
+        for (int i = 0; i < n; i++) {
+            indexes.add(nums[i]);
+        }
+        for (int i = n; i < nums.length; i++) {
+            indexesOfn.add(nums[i]);
+        }
+        for (int i = 0; i < ans.length; i++) {
+            if(((i+1)%2) == 0){
+                ans[i]= indexesOfn.peek();
+                indexesOfn.remove();
+            }else {
+                ans[i] = indexes.peek();
+                indexes.remove();
+            }
+        }
+
+        return ans;
+    }
 }
