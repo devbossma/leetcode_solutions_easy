@@ -277,6 +277,7 @@ public class Soluutions {
         return count;
     }
 
+    // 1470. Shuffle the Array
     public static int[] shuffle(int[] nums, int n) {
         int[] ans = new int[2*n];
         Queue<Integer> indexes = new LinkedList<>();
