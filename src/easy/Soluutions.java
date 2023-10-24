@@ -300,5 +300,14 @@ public class Soluutions {
         }
 
         return ans;
+    }    
+    
+    // 2798. Number of Employees Who Met the Target
+    public static int numberOfEmployeesWhoMetTarget(int[] hours, int target) {
+        int empCount=0;
+        for(int i = 0; i < hours.length; i++){
+            if(hours[i] >= target) empCount++;
+        }
+        return empCount;
     }
 }
