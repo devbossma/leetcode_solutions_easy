@@ -1,9 +1,6 @@
 
-import hard.Solutions;
-
 import java.util.*;
 
-import static hard.Solutions.largestRectangleArea;
 
 
 public class Main {
